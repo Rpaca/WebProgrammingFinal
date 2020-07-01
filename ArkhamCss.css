@@ -1,0 +1,153 @@
+h1, h2, h3, p{
+    font-family: 'Song Myung', serif;
+}
+
+h2{
+    font-size: 30px;
+}
+
+.choice1, .choice2{
+    font-size: 30px;
+    color: white;
+}
+
+html, body, section{
+    height: 100%;
+    width: 100%;
+}
+
+section{
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+}
+
+section div{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section{
+    display: none;
+}
+
+#s1{
+    display: flex;
+}
+
+
+div.choice{
+    display: flex;
+    height: 600px;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+}
+.result{
+    display: none;
+}
+
+
+.textBox{
+    margin: 15%;
+}
+
+.nextButton, .choice1, .choice2{
+    animation: buttonMove 0.7s linear infinite alternate;
+    position: relative;
+}
+
+img.UI:hover, .choice1:hover,.choice2:hover, .nextButton:hover{
+    transform: translateY(5%);
+    opacity: 0.2;
+    animation-play-state: paused;
+}
+
+.UI{
+    min-width: 60px;
+    width: 50%;
+    height: auto;
+    object-fit:contain;
+}
+
+.imageSlide{
+    display: flex;
+    flex-direction: row;
+}
+
+.SoundOn{
+    display: none;
+}
+
+
+.audioPlayer .slider {
+-webkit-appearance: none;
+width: 150%;
+height: 20px;
+background: #d3d3d3;
+outline: none;
+opacity: 0.7;
+-webkit-transition: .2s;
+transition: opacity .2s;
+}
+
+.slider:hover {
+ opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+-webkit-appearance: none;
+appearance: none;
+width: 25px;
+height: 35px;
+background: black;
+cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+width: 25px;
+height: 35px;
+background: black;
+cursor: pointer;
+}
+.slidecontainer{
+    visibility: hidden;
+}
+.miniPlayer{
+    position:fixed;
+    bottom: 5%;
+    left: 2%;
+    height: 20px;
+    width: 200px;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+}
+.miniPlayer .slider {
+    -webkit-appearance: none;
+    width: 100px;
+    height: 20px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+.menu{
+    position:fixed;
+    bottom: 2%;
+    right: 2%;
+    width: 250px;
+    display: flex;
+    justify-content:flex-end;
+}
+
+
+@keyframes buttonMove{
+    from{top: 0;}
+    to{top: 13px;}
+}
+

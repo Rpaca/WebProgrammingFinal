@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"  name="description" content="The Night Of Zealot">
+        <title Arkham Story:The Night Of Zealot></title>
+        <link href="https://fonts.googleapis.com/css2?family=Song+Myung&display=swap" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="ArkhamCss.css">
+        <script src="jquery-3.5.1.min.js"></script>
+        <script src="ArkhamScript.js"></script>
+    </head>
+    <body>
+        <section id="s1" style="display:flex; justify-content: center;align-items: center;">
+            <div class="audioPlayer" style="margin: 20px; height: 300px; margin-top: 100px;" >
+                <div class="SoundOn">
+                    <img src="SoundIcon.png" class="UI" onclick="StopMusic()">
+                </div>
+                <div class="SoundOff">
+                    <img src="NonSoundIcon.png" class="UI" onclick="PlayMusic()">
+                </div>
+                <div class="slidecontainer">
+                    <input type="range" min="1" max="100" value="50" oninput="SetValue(this)" class="slider" id="myRange">
+                </div>
+            </div>
+            <div>
+                <h2>몰입감 있는 플레이를 위해</h2>
+                <h2>소리를 켜는 것을 추천합니다.</h2>
+            </div>
+            </div>
+                <h1>스토리 진행을 위해</h1>
+                <h1>아래 버튼을 눌러 주세요.</h1>
+                <img src="NextSlideArrow.png" onclick="fnMove(2)" class="nextButton">
+            </div>
+        </section>
+        <section id="s2" style="background-image:url(title.png); background-size:cover;">
+            <div style="background-color: black; opacity: 0.7;">
+                <div class="textBox">
+                    <h2 style="color: white;">이 게임은 소설가 H.P러브크래프트의 소설을 원작으로 하고 있습니다.</h2>
+                    <h2 style="color: white;">선택지에 따라 달라지는 다양한 엔딩을 경험해보세요.</h2>
+                    <img src="NextSlideArrowWhite.png" onclick="fnMove(3)" class="nextButton">
+                </div>
+            </div>
+        </section>
+        <section id="s3">
+            <div style="background-image:url(blood.png); background-repeat: no-repeat; background-position: center;">
+                <h2 style="font-size: 60px;" ><광신도의 밤></h2>
+                <img src="NextSlideArrow.png" onclick="fnMove(4)" class="nextButton">
+            </div>
+        </section>
+        <section id="s4">
+            <div class="textBox">
+                <h1>금요일, 1913년 9월 18일 아컴, 매사추세츠.</h1>
+                <h1>길고 비정상적으로 더운 여름의 끝자락이다.</h1>
+                <h1>가을이 다가오고 있음에도, 무더위는 끊임없이 계속되고 있다.</h1>
+                <img src="NextSlideArrow.png" onclick="fnMove(5)" class="nextButton"></img>
+            </div>
+        </section>
+        <section id="s5">
+            <div class="textBox">
+                <h1>고요하고 형언할 수 없는 분노가 마을을 지배하고 있다.</h1>
+                <h1>사람들은 걸핏하면 화를 내는 일이 잦아졌고 과격한 폭행이 늘어갔다.</h1>
+                <h1>이뿐만 아니라 불가사의한 실종사건이 점차 증가했고</h1>
+                <h1>평소에는 얌전했던 동물이 사람을 습격하는 사건도 발생했다.</h1>
+                <img src="NextSlideArrow.png" onclick="fnMove(6)" class="nextButton"></img>
+            </div>
+        </section>
+        <section id="s6">
+            <div class="textBox">
+                <h1>이런 사건들을 단순히 더운 날씨의 탓으로 하기엔 의문이 남는다.</h1>
+                <h1>"당신"은 연방의 요원으로서 이 사건에 가득찬 의문을 해결하기위해 아캄시로 발걸음을 옮겼다.</h1>
+                <img src="RolandBanks.png" style="width: 40%; min-width: 100px;">
+                <img src="NextSlideArrow.png" onclick="fnMove(7)" class="nextButton"></img>
+            </div>
+        </section>
+        <section id="s7">
+            <div class="textBox">
+                <div class="imageSlide">
+                    <img src="oldHouse.png" style="width: 40%; min-width: 200px;">
+                    <div>
+                        <h1>늦은 밤. 숙소로 사용하고 있는 저택의 서재에서 사건의 자료를 정리하던 "당신".</h1>
+                        <h1>정리를 끝내고 방을 나가려는 찰나 서재로 나가는 문이 눈앞에서 사라졌습니다.</h1>
+                        <h1>분명 눈앞에 있던 벽은 사라지고 당신의 앞에는 단단한 벽만 남아있습니다.</h1>
+                    </div> 
+                </div>
+                <img src="NextSlideArrow.png" onclick="fnMove(8)" class="nextButton"></img>
+            </div>
+        </section>
+        <section id="s8" style="background-color: black; opacity: 0.95;">
+            <div class="textBox">
+                <h1 style="color:white;">당신의 행동을 선택하세요.</h1>
+                <h1 onclick="OnDisplay(9,10,1)" class="choice1">1. 서재를 나가는 단서를 찾기 위해 방을 조사한다.</h1>
+                <h1 onclick="OnDisplay(10,9,2)" class="choice2">2. 지금 일어난 일이 악몽이라고 생각하며 쇼파에서 잠을 청한다.</h1>
+            </div>
+        </section>
+        <section class="result" id="s9">
+            <div class="textBox">
+                <h1>서재를 살펴보니 분명 깔끔했던 바닥의 러그 귀퉁이가</h1>
+                <h1>너덜너덜하고 진흙이 묻은 것을 알아챘습니다.</h1>
+                <img src="NextSlideArrow.png" onclick="fnMove(13)" class="nextButton"></img>
+            </div>
+        </section>
+        <section  id="s10">
+            <div class="textBox">
+                <h1>잠깜이나마 달콤한 잠에 취했지만, 금세 뜨거운 열기에 잠에서 깨어났다.</h1>
+                <h1>일어나 주변을 둘러보니 상황은 조금 더 보다 더욱 끔찍했다.</h1>
+                <img src="NextSlideArrow.png" onclick="fnMove(11)" class="nextButton"></img>
+            </div>
+        </section>
+        <section id="s11">
+            <div class="textBox">
+                <h1>방안은 연기로 가득 찼고 주변 벽과 가구들은 불타고 있었다.</h1>
+                <h1>뒤늦게 탈출구를 찾아보지만 여전히 문은 사라지고 벽은 막혀있다.</h1>
+                <img src="NextSlideArrow.png" onclick="fnMove(12)" class="nextButton"></img>
+            </div>
+        </section>
+        <section class="ending" id="s12">
+            <div class="textBox">
+                <h1>당신은 서재안에서 불길에 휩싸여 비참한 최후를 맞이합니다.</h1>
+                <h1>이로서 아캄시가 어떤 운명을 맞이할지는 아무도 알 수 없습니다.</h1>
+                <h2>[엔딩1 : 현실이된 악몽]</h2>
+            </div>
+        </section>
+        <section class="result" id="s13">
+            <div class="textBox">
+                <h1>러그를 들어올리니 놀랍게도, 방 바닥에서 서재 밖으로  나가는 문이 보입니다.</h1>
+                <h1>천천히 문을 돌리자 문이 벌컥 열렀고, 아래층 복도가 내려다 보입니다.</h1>
+                <h1>당신은 문안쪽으로 뛰어 내렸고, 부드러운 흙 위에 착지했습니다.</h1>
+                <img src="NextSlideArrow.png" onclick="fnMove(14)" class="nextButton"></img>
+            </div>
+        </section>
+        <footer>
+            <div class="footerUI">
+                <div class="miniPlayer">
+                    <div class="SoundOn">
+                        <img src="SoundIcon.png" class="UI" onclick="StopMusic()">
+                    </div>
+                    <div class="SoundOff">
+                        <img src="NonSoundIcon.png" class="UI" onclick="PlayMusic()">
+                    </div>
+                    <div class="slidecontainer">
+                        <input type="range" min="1" max="100" value="50" oninput="SetValue(this)" class="slider" id="myRange">
+                    </div>
+                </div>
+                <div class="menu">
+                    <img src="Top.png" class="UI" onclick="GoToTop()">
+                    <img src="reStart.png" class="UI" onclick="Reload()">
+                </div>
+            </div>
+        </footer>
+
+        
+    </body>
+</html>
