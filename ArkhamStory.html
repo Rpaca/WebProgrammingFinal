@@ -8,6 +8,10 @@
         <script src="jquery-3.5.1.min.js"></script>
         <script src="ArkhamScript.js"></script>
     </head>
+    <nav>
+        <img src="ice.png" id="item1">
+        <img src="wine.png" id="item2">
+    </nav>
     <body>
         <section id="s1" style="display:flex; justify-content: center;align-items: center;">
             <div class="audioPlayer" style="margin: 20px; height: 300px; margin-top: 100px;" >
@@ -87,8 +91,8 @@
         <section id="s8" style="background-color: black; opacity: 0.95;">
             <div class="textBox">
                 <h1 style="color:white;">당신의 행동을 선택하세요.</h1>
-                <h1 onclick="OnDisplay(9,10,1)" class="choice1">1. 서재를 나가는 단서를 찾기 위해 방을 조사한다.</h1>
-                <h1 onclick="OnDisplay(10,9,2)" class="choice2">2. 지금 일어난 일이 악몽이라고 생각하며 쇼파에서 잠을 청한다.</h1>
+                <h1 onclick="OnDisplay(9,10,1)" class="choice1" id="a1">1. 서재를 나가는 단서를 찾기 위해 방을 조사한다.</h1>
+                <h1 onclick="OnDisplay(10,9,2)" class="choice2" id="a2">2. 지금 일어난 일이 악몽이라고 생각하며 쇼파에서 잠을 청한다.</h1>
             </div>
         </section>
         <section class="result" id="s9">
@@ -119,12 +123,242 @@
                 <h2>[엔딩1 : 현실이된 악몽]</h2>
             </div>
         </section>
-        <section class="result" id="s13">
+        <section id="s13">
             <div class="textBox">
                 <h1>러그를 들어올리니 놀랍게도, 방 바닥에서 서재 밖으로  나가는 문이 보입니다.</h1>
                 <h1>천천히 문을 돌리자 문이 벌컥 열렀고, 아래층 복도가 내려다 보입니다.</h1>
                 <h1>당신은 문안쪽으로 뛰어 내렸고, 부드러운 흙 위에 착지했습니다.</h1>
                 <img src="NextSlideArrow.png" onclick="fnMove(14)" class="nextButton"></img>
+            </div>
+        </section>
+        <section id="s14">
+            <div class="textBox">
+                <h1>집의 복도는 진흙으로 뒤덮혀 있고,</h1>
+                <h1>나무바닥은 온데간데없이 사라진 채 흙으로 가득합니다.</h1>
+                <h1>복도는 다락방, 지하실, 거실과 이어집니다.</h1>
+                <img src="NextSlideArrow.png" onclick="fnMove(15)" class="nextButton"></img>
+            </div>
+        </section>
+        <section style="background-color: black; opacity: 0.95;" id="s15">
+            <div class="textBox">
+                <h1 style="color:white;">당신의 행동을 선택하세요.</h1>
+                <h1 onclick="OnDisplay(16,10,3);CheckCount();" class="choice1" id="a3">1. 썩은 고기냄새가 나는 다락방을 조사한다.</h1>
+                <h1 onclick="OnDisplay(19,10,4);CheckCount();" class="choice2" id="a4">2. 냉기가 뿜어져나오는 지하실을 조사한다.</h1>
+                <h1 onclick="GoToLiving();CheckCount();" class="choice3" id="a5">3. 뜨거운 장벽으로 막힌 거실을 조사한다.</h1>
+            </div>
+        </section>
+        <section id="s16">
+            <div class="textBox">
+                <h1>다락방에 들어가자 고기 썩은 냄세가 진동한다.</h1>
+                <h1>천장에 매달린 갈고리에는 이상한 괴물의 사체가 걸려있고</h1>
+                <h1>시체에서서 나온 피가 술통에 떨어진다.</h1>
+                <img src="NextSlideArrow.png" onclick="fnMove(17)" class="nextButton"></img>
+            </div>
+        </section>
+        <section style="background-color: black; opacity: 0.95;" id="s17">
+            <div class="textBox">
+                <h1 style="color:white;">당신의 행동을 선택하세요.</h1>
+                <h1 onclick="OnDisplay(18,10,6);GetItem(2);CheckCount();" class="choice1" id="a6">1. 다락방을 더 자세히 조사한다.</h1>
+                <h1 onclick="OnDisplay(15,10,7);CheckCount();" class="choice2" id="a7">2. 복도로 돌아간다.</h1>
+            </div>
+        </section>
+        <section id="s18">
+            <div class="textBox">
+                <h1>다락방에서 "빈 술통"을 발견했다.</h1>
+                <h1>"술통"이 어딘가 쓰일데가 있지 않을까 싶어 챙겨 복도로 돌아온다.</h1>
+                <img src="NextSlideArrow.png" onclick="OnDisplay(15,10,10);CheckCount();" class="nextButton" id="a10"></img>
+            </div>
+        </section>
+        <section id="s19">
+            <div class="textBox">
+                <div>
+                    <h1>저택의 지하실은 지하 얼음 동굴과 터널들이 복잡하게 얽힌 미로로 변했다.</h1>
+                    <h1>동굴 안쪽에서는 지독한 한기가 흘러나오고 있다.</h1>
+                </div>
+                <img src="NextSlideArrow.png" onclick="fnMove(20);" class="nextButton"></img>
+            </div>
+        </section>
+        <section style="background-color: black; opacity: 0.95;" id="s20">
+            <div class="textBox">
+                <h1 style="color:white;">당신의 행동을 선택하세요.</h1>
+                <h1 onclick="OnDisplay(21,10,8);GetItem(1);CheckCount();" class="choice1" id="a8">1. 지하실 동굴 안쪽을 조사한다.</h1>
+                <h1 onclick="OnDisplay(15,10,9);CheckCount();" class="choice2" id="a9">2. 복도로 돌아간다.</h1>
+            </div>
+        </section>
+        <section id="s21">
+            <div class="textBox">
+                <h1>거실의 열기를 낮출만한 "얼음 조각"을 발견했다</h1>
+                <h1>"얼음 조각"을 챙겨 복도로 돌아왔다.</h1>
+                <img src="NextSlideArrow.png" onclick="fnMove(15);CheckCount();" class="nextButton"></img>
+            </div>
+        </section>
+        <section id="s22">
+            <div class="textBox">
+                <h1>다락방에서 발견한 "빈 술통"에 지하실에서 발견한 "얼음 조각"을 담아</h1>
+                <h1>장막에 뿌리자 장막히 서서히 녹아서 사라진다.</h1>
+                <h1>장막이 사라진 거실을 향해 이동한다.</h1>
+                <img src="NextSlideArrow.png" onclick="fnMove(26);" class="nextButton" ></img>
+            </div>
+        </section>
+        <section id="s23">
+            <div class="textBox">
+                <h1>거실로 가는 길은 뜨거운 장막으로 가로 막혀있다.</h1>
+                <h1>장막은 뚫고 가기엔 너무나 뜨거워 온 몸을 태울 것만 같았다.</h1>
+                <h1>다른 힌트를 찾아 복도로 돌아간다.</h1>
+                <img src="NextSlideArrow.png" onclick="fnMove(15);" class="nextButton"></img>
+            </div>
+        </section>
+        <section id="s24">
+            <div class="textBox">
+                <h1>밖에서 미칠듯한 울음소리가 들려온다.</h1>
+                <h1>잠깐의 정적후 괴성과 함께 진흙으로 뒤덮힌 바닥에서 괴물들이 뛰쳐나온다.</h1>
+                <h1>저택에서 너무 오랜 시간을 사용한것 같다.</h1>
+                <img src="NextSlideArrow.png" onclick="fnMove(25);" class="nextButton"></img>
+            </div>
+        </section>
+        <section class="ending" id="s25">
+            <div class="textBox">
+                <h1>당신은 괴물들에게 둘러쌓여 죽음을 맞이합니다.</h1>
+                <h1>이로서 아캄시가 어떤 운명을 맞이할지는 아무도 알 수 없습니다.</h1>
+                <h2>[엔딩2 : 너무 늦었나?]</h2>
+            </div>
+        </section>
+        <section id="s26">
+            <div class="textBox">
+                <div class="imageSlide">
+                    <div>
+                        <h1>복도에서 미칠듯한 울음소리가 들려온다.</h1>
+                        <h1>엎핏 인간의 형태를 띄고 있지만, 머리와 네발은 사나운 개의 모습을 한</h1>
+                        <h1>끔찍한 짐승이 짐승이 나타났다.</h1>
+                        <h1>괴물의 공포스러운 두 눈동자는 당신을 향하는 것만 같다.</h1>
+                    </div>
+                    <img src="monster.png" style="width: 40%; min-width: 100px;">
+                </div>
+                <img src="NextSlideArrow.png" onclick="fnMove(27);" class="nextButton"></img>
+            </div>
+        </section>
+        <section id="s27">
+            <div class="textBox">
+                <div class="imageSlide">
+                    <img src="lita.png" style="width: 40%; min-width: 100px;">
+                    <div>
+                        <h1>"대체 무슨 짓이야?"</h1>
+                        <h1>괴물의 비명과 함께 들린 것은 여성의 힘찬 고함소리였다.</h1>
+                        <h1>"대체 내 장벽에 무슨 짓을 한거야?!"</h1>
+                        <h1>그녀가 당신에게 고함을 지르고 분노합니다.</h1>
+                        <h1>그리고 그와 동시 끔찍한 괴물은 당신을 향해 다가오고 있습니다.</h1>
+                    </div>
+                </div>
+                <img src="NextSlideArrow.png" onclick="fnMove(28);" class="nextButton"></img>
+            </div>
+        </section>
+        <section style="background-color: black; opacity: 0.95;" id="s28">
+            <div class="textBox">
+                <h1 style="color:white;">당신의 행동을 선택하세요.</h1>
+                <h1 onclick="OnDisplay(29,31,10)" class="choice1" id="a10">1. 구울사제를 혼자 공격한다.</h1>
+                <h1 onclick="OnDisplay(33,29,11)" class="choice2" id="a11">2. 여성을 설득해 구울사제를 함께 공격한다. </h1>
+                <h1 onclick="OnDisplay(31,29,12)" class="choice3" id="a12">3. 괴물과 맞설 용기가 나지 않는다. 문밖으로 뛰쳐나간다.</h1>
+            </div>
+        </section>
+        <section id="s29" style="background-image:url(blood.png); background-repeat: no-repeat; background-position: center;">
+            <div class="textBox">
+                <div class="imageSlide">
+                    <div>
+                        <h1>거실 바닥에 떨어져 있는 한손 도끼를 잽싸게 들어</h1>
+                        <h1>구울사제의 머리를 향해 힘껏 휘둘렀지만,</h1>
+                        <h1>구울사제는 잠깐 휘청일뿐 다시 자세를 바로잡고</h1>
+                        <h1>크고 날카로운 손톱으로 내 심장을 순식간에 가로질렀다.</h1>
+                    </div>>
+                </div>
+                <img src="NextSlideArrow.png" onclick="fnMove(30);" class="nextButton"></img>
+            </div>
+        </section>
+        <section class="ending" id="s30">
+            <div class="textBox">
+                <h1>구울의 손톱은 한순간에 심장을 꿰뚫었고 말로 표현할수 없는 고통이 느껴졌다.</h1>
+                <h1>어디선가 들리는 누군가의 소리치는 목소리가 점점 멀어지며, 서서히 눈이 감긴다.</h1>
+                <h2>[엔딩3 : 무모한 용기]</h2>
+            </div>
+        </section>
+        <section id="s31">
+            <div class="textBox">
+                <div class="imageSlide">
+                    <div>
+                        <h1>당신은 목숨만 유지한 채 간신히 저택을 빠져나왔습니다.</h1>
+                        <h1>"멍청아! 네가 무슨 짓을 했는지 알아?"</h1>
+                        <h1>"거실에서 봤던 그녀가 서둘러 당신을 뒤쫓아오며 소리칩니다."</h1>
+                    </div>>
+                </div>
+                <img src="NextSlideArrow.png" onclick="fnMove(32);" class="nextButton"></img>
+            </div>
+        </section>
+        <section class="ending" id="s32">
+            <div class="textBox">
+                <h1>"우선은 시간이 없으니 여길 빠져나가야해."</h1>
+                <h1>"그리고 모든걸 설명해줄게 이 도시에서 생긴 일들을..."</h1>
+                <h1>당신은 아무 말 없이 그저 고개를 끄덕였고, </h1>
+                <h1>빗속을 뛰어가는 그녀를 따라 아컴 강변으로 향했습니다.</h1>
+                <h2>[엔딩4 : 생존자]</h2>
+            </div>
+        </section>
+        <section id="s33">
+            <div class="textBox">
+                <div class="imageSlide">
+                    <div>
+                        <h1>당신을 향해 소리치던 여자는 끔찍한 괴물의 모습을 보더니 당신을 향해 다급히 소리칩니다.</h1>
+                        <h1>"저 괴물을 절대 저택에서 살려 내보내면 안 돼!"</h1>
+                        <h1>"그리고 알수없는 붉은색의 신비로운 가루를 괴물을 향해 뿌립니다."</h1>
+                    </div>>
+                </div>
+                <img src="NextSlideArrow.png" onclick="fnMove(34);" class="nextButton"></img>
+            </div>
+        </section>
+        <section id="s34">
+            <div class="textBox">
+                <div class="imageSlide">
+                    <div>
+                        <h1>괴물이 가루에 닿자 괴로운듯이 비명을 지릅니다.</h1>
+                        <h1>그틈을 놓치지 않고 당신은 바닥에 떨어져 있는 손도끼를 잽싸게 들어</h1>
+                        <h1>괴물의 머리를 향해 있는 힘껏 휘두르자 괴물이 쓰러집니다.</h1>
+                    </div>>
+                </div>
+                <img src="NextSlideArrow.png" onclick="fnMove(35);" class="nextButton"></img>
+            </div>
+        </section>
+        <section id="s35">
+            <div class="textBox">
+                <div class="imageSlide">
+                    <div>
+                        <h1>"구울을 잡으려고 준비했던 봉인을 네가 박살냈어!"</h1>
+                        <h1>그녀가 횃불을 들어 올립니다.</h1>
+                        <h1>이제 남은 방법은 이 지옥 구덩이를 태워버리는 것 밖에 없어.</h1>
+                    </div>>
+                </div>
+                <img src="NextSlideArrow.png" onclick="fnMove(36);" class="nextButton"></img>
+            </div>
+        </section>
+        <section style="background-color: black; opacity: 0.95;" id="s36">
+            <div class="textBox">
+                <h1 style="color:white;">당신의 행동을 선택하세요.</h1>
+                <h1 onclick="OnDisplay(37,38,13)" class="choice1" id="a13">1. 그녀의 제안의 동의하며 저택을 불태웁니다.</h1>
+                <h1 onclick="OnDisplay(38,37,14)" class="choice2" id="a14">2. "그 지옥 구덩이가 누구집인데!" 저택을 불태우지 않습니다. </h1>
+            </div>
+        </section>
+        <section class="ending" id="s37">
+            <div class="textBox">
+                <h1>이로서 많은 괴물들은 저택과 함께 불타 사라질 것입니다.</h1>
+                <h1>하지만 아직 모든 사건이 끝난 것은 아닙니다.</h1>
+                <h1>이 사건의 배후를 찾기위해 당신은 여성과 함께 아컴 강변으로 이동합니다.</h1>
+                <h2>[엔딩5 : 대의를 위한 희생]</h2>
+            </div>
+        </section>
+        <section class="ending" id="s38">
+            <div class="textBox">
+                <h1>당신은 무사히 생존했고 집도 지킬 수 있었습니다.</h1>
+                <h1>하지만 아직 모든 사건이 끝난 것은 아닙니다.</h1>
+                <h1>이 사건의 배후를 찾기위해 당신은 여성과 함께 아컴 강변으로 이동합니다.</h1>
+                <h1>강변으로 발걸음을 옮기면서 당신은 자신의 선택이 올바른 선택이었는지 고민에 빠집니다.</h1>
+                <h2>[엔딩6 : 소중한 나의 집]</h2>
             </div>
         </section>
         <footer>

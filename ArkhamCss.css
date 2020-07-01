@@ -6,7 +6,25 @@ h2{
     font-size: 30px;
 }
 
-.choice1, .choice2{
+nav{
+    top: 20%;
+    position: fixed;
+    float :left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 7%;
+    height: 50%;
+    z-index: 1;
+}
+
+#item1, #item2{
+    width: 100px;
+    display: none;
+}
+
+.choice1, .choice2, .choice3{
     font-size: 30px;
     color: white;
 }
@@ -17,9 +35,9 @@ html, body, section{
 }
 
 section{
+    display: flex;
     justify-content: center;
     flex-direction: column;
-    display: flex;
 }
 
 section div{
@@ -53,20 +71,23 @@ div.choice{
 
 .textBox{
     margin: 15%;
+    display: flex;
+    flex-direction: column;
 }
 
-.nextButton, .choice1, .choice2{
+.nextButton, .choice1, .choice2, .choice3{
     animation: buttonMove 0.7s linear infinite alternate;
     position: relative;
 }
 
-img.UI:hover, .choice1:hover,.choice2:hover, .nextButton:hover{
+img.UI:hover, .choice1:hover,.choice2:hover, .choice3:hover, .nextButton:hover{
     transform: translateY(5%);
     opacity: 0.2;
     animation-play-state: paused;
 }
 
 .UI{
+    z-index: 1;
     min-width: 60px;
     width: 50%;
     height: auto;
@@ -80,6 +101,14 @@ img.UI:hover, .choice1:hover,.choice2:hover, .nextButton:hover{
 
 .SoundOn{
     display: none;
+}
+
+.ending{
+    background-color: black;
+}
+
+.ending h1,.ending h2{
+    color: white;
 }
 
 

@@ -1,23 +1,37 @@
 var myAudio = new Audio("Gothic Music - The Sealed Kingdom.mp3");
-
+var moveCount = 0;
+var moveChane = 8;
             function fnMove(seq){
                 $("#s" + seq).css("display", "flex");
                 var offset = $("#s" + seq).offset();
                 $('html, body').animate({scrollTop : offset.top}, 500);
             }
-            function movePage(){
-                $('html, body').stop().animate( { scrollTop : '+=800' } );
-            }
 
             function OnDisplay(choice, nonChoice, num){
                 if($("#s" + nonChoice).css("display")!="none"){
                     return;}
-                $(".choice" + num).css("color", "red");
+                $("#a" + num).css("color", "red");
                 $("#s" + choice).css("display", "flex");
                 $("#s" + choice).css("flex-direction", "column");
                 $("#s" + choice).css("justify-content", "center");
                 $("#s" + choice).css(" align-items", "center");
-                fnMove(choice)
+                fnMove(choice);
+            }
+
+            function GoToLiving(){
+                $("#a5").css("color", "red");
+                //아이템을 모두 찾은 경우
+                if($("#item1").css("display") && $("#item2").css("display")=="flex"){
+                    fnMove(22);
+                    $("#item1" ).css("display", "none");
+                    $("#item2" ).css("display", "none");
+                }
+
+                else{
+                    fnMove(23);
+                }
+
+                //아이템을 모두 찾지 못한 경우
             }
 
             function PlayMusic(){
@@ -45,4 +59,14 @@ var myAudio = new Audio("Gothic Music - The Sealed Kingdom.mp3");
             function Reload(){
                 window.location.reload();
                 GoToTop();
+            }
+            function GetItem(n){
+                $("#item" + n).css("display", "flex");
+            }
+            function CheckCount(){
+                moveCount++;
+                if(moveChane < moveCount)
+                {
+                    fnMove(24);
+                }
             }
